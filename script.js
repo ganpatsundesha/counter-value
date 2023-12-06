@@ -1,6 +1,20 @@
 const value = document.querySelector(".counter-value");
 const btns = document.querySelectorAll(".btn");
-let count = 0;
+let count = localStorage.getItem("value") ? JSON.parse(localStorage.getItem("value")) : 0;
+
+const handelColrChnage = () => {
+    if (count > 0) {
+        value.style.color = "green"
+    }
+    else {
+        value.style.color = "black"
+    }
+}
+
+window.onload = () => {
+    value.textContent = count;
+    handelColrChnage()
+};
 
 btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
@@ -22,14 +36,10 @@ btns.forEach((btn) => {
         }
 
         // Color change on Positive, Negative and 0 Value
+        handelColrChnage()
 
-        if (count > 0) {
-            value.style.color = "green"
-        }
-        else {
-            value.style.color = "black"
-        }
-        value.textContent = count
+        localStorage.setItem("value", count)
+        value.textContent = localStorage.getItem("value");
     });
 });
 
