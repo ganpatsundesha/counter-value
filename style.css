@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.counter-box h1 {
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.counter-box .counter-value {
+    font-size: 60px;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    margin: 16px 0;
+}
+
+.counter-box .btn-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-box .btn {
+    padding: 8px 20px;
+    font-size: 16px;
+    background: #eee;
+    border-radius: 5px;
+}
